@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0B0B0B">
+    <title>Iniciar sesión | RHLM Gaming</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="auth-page">
+    <main class="auth-container">
+        <a href="/login.html" class="auth-brand">
+            <span class="brand-logo">R</span>
+            <span>
+                <strong>RHLM <span>GAMING</span></strong>
+                <small>REAL GAMERS NEVER DIE</small>
+            </span>
+        </a>
+
+        <section class="auth-card glass-panel">
+            <div class="auth-heading">
+                <span class="hero-tag">WELCOME BACK</span>
+                <h1>Bienvenido <span class="text-gradient">de vuelta.</span></h1>
+                <p>Inicia sesión para entrar a tu biblioteca gamer.</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="loginIdentifier">Correo electrónico o usuario</label>
+                    <input type="text" id="loginIdentifier" class="input-control"
+                        placeholder="Tu correo o nombre de usuario"
+                        autocomplete="username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="loginPassword">Contraseña</label>
+                    <input type="password" id="loginPassword" class="input-control"
+                        placeholder="Ingresa tu contraseña"
+                        autocomplete="current-password" required>
+                </div>
+
+                <p class="form-error" id="loginError" role="alert"></p>
+
+                <button type="submit" class="btn btn-primary auth-submit" id="loginSubmit">
+                    Iniciar sesión
+                </button>
+            </form>
+
+            <div class="auth-divider"><span>¿Todavía no tienes cuenta?</span></div>
+            <a href="/register.html" class="btn btn-secondary auth-submit">Crear una cuenta</a>
+        </section>
+
+        <footer class="auth-footer">
+            <p>PLAY · CONNECT · ENJOY</p>
+            <small>RHLM GAMING © 2026</small>
+        </footer>
+    </main>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>

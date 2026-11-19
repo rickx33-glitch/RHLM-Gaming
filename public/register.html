@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0B0B0B">
+    <title>Crear cuenta | RHLM Gaming</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="auth-page">
+    <main class="auth-container">
+        <a href="/register.html" class="auth-brand">
+            <span class="brand-logo">R</span>
+            <span>
+                <strong>RHLM <span>GAMING</span></strong>
+                <small>REAL GAMERS NEVER DIE</small>
+            </span>
+        </a>
+
+        <section class="auth-card glass-panel">
+            <div class="auth-heading">
+                <span class="hero-tag">JOIN THE COMMUNITY</span>
+                <h1>Crea tu <span class="text-gradient">cuenta.</span></h1>
+                <p>Registra tu cuenta y comienza a organizar tu colección.</p>
+            </div>
+
+            <form id="registerForm">
+                <div class="input-group">
+                    <label for="registerUsername">Nombre de usuario</label>
+                    <input type="text" id="registerUsername" class="input-control"
+                        placeholder="Ej. Envy" autocomplete="username"
+                        minlength="3" maxlength="30" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="registerEmail">Correo electrónico</label>
+                    <input type="email" id="registerEmail" class="input-control"
+                        placeholder="correo@ejemplo.com"
+                        autocomplete="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="registerPassword">Contraseña</label>
+                    <input type="password" id="registerPassword" class="input-control"
+                        placeholder="Crea una contraseña"
+                        autocomplete="new-password" minlength="6" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="registerConfirmPassword">Confirmar contraseña</label>
+                    <input type="password" id="registerConfirmPassword" class="input-control"
+                        placeholder="Repite tu contraseña"
+                        autocomplete="new-password" minlength="6" required>
+                </div>
+
+                <p class="form-error" id="registerError" role="alert"></p>
+
+                <button type="submit" class="btn btn-primary auth-submit" id="registerSubmit">
+                    Crear cuenta
+                </button>
+            </form>
+
+            <div class="auth-divider"><span>¿Ya tienes una cuenta?</span></div>
+            <a href="/login.html" class="btn btn-secondary auth-submit">Iniciar sesión</a>
+        </section>
+
+        <footer class="auth-footer">
+            <p>PLAY · CONNECT · ENJOY</p>
+            <small>RHLM GAMING © 2026</small>
+        </footer>
+    </main>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>

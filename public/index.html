@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0B0B0B">
+    <title>RHLM Gaming | Mi biblioteca</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar glass-panel">
+            <a href="/" class="brand">
+                <div class="brand-logo">R</div>
+                <div>
+                    <h2>RHLM <span>GAMING</span></h2>
+                    <small>REAL GAMERS NEVER DIE</small>
+                </div>
+            </a>
+
+            <nav class="sidebar-nav">
+                <p class="nav-label">MENU PRINCIPAL</p>
+                <a href="#inicio" class="nav-link active" data-section="inicio"><span>⌂</span> Inicio</a>
+                <a href="#coleccion" class="nav-link" data-section="coleccion"><span>▣</span> Mi colección</a>
+                <a href="#favoritos" class="nav-link" id="favoritesLink"><span>♡</span> Favoritos</a>
+                <a href="#estadisticas" class="nav-link" data-section="estadisticas"><span>▥</span> Estadísticas</a>
+
+                <p class="nav-label">CUENTA</p>
+                <a href="#" class="nav-link" id="profileLink"><span>◉</span> Mi perfil</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-message">
+                    <span>PLAY · CONNECT · ENJOY</span>
+                    <p>Tu colección. Tus reglas.</p>
+                </div>
+                <button class="btn btn-secondary logout-btn" id="logoutBtn">↪ Cerrar sesión</button>
+            </div>
+        </aside>
+
+        <main class="main-content" id="inicio">
+            <header class="topbar glass">
+                <div>
+                    <p class="section-subtitle">TU ESPACIO GAMER</p>
+                    <h2>Bienvenido de vuelta</h2>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar" id="userAvatar">G</div>
+                    <div>
+                        <strong id="userName">Gamer</strong>
+                        <small>Jugador</small>
+                    </div>
+                </div>
+            </header>
+
+            <section class="hero-section">
+                <div class="hero-content">
+                    <span class="hero-tag">TU BIBLIOTECA PERSONAL</span>
+                    <h1>Tu biblioteca,<br><span class="text-gradient">tu universo.</span></h1>
+                    <p>Organiza tus videojuegos, registra tu progreso y mantén toda tu colección en un solo lugar.</p>
+                    <button class="btn btn-primary" id="addGameBtn">+ Agregar videojuego</button>
+                </div>
+                <div class="hero-decoration" aria-hidden="true">
+                    <div class="hero-orbit orbit-one"></div>
+                    <div class="hero-orbit orbit-two"></div>
+                    <div class="hero-core">R</div>
+                </div>
+            </section>
+
+            <section class="stats-section" id="estadisticas">
+                <div class="section-heading">
+                    <div>
+                        <h2>Tu actividad</h2>
+                        <p>Un vistazo a tu colección.</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <article class="stat-card glass">
+                        <span class="stat-icon">▣</span>
+                        <p>Videojuegos registrados</p>
+                        <h3 id="totalGames">0</h3>
+                    </article>
+                    <article class="stat-card glass">
+                        <span class="stat-icon">◷</span>
+                        <p>En progreso</p>
+                        <h3 id="playingGames">0</h3>
+                    </article>
+                    <article class="stat-card glass">
+                        <span class="stat-icon">✓</span>
+                        <p>Completados</p>
+                        <h3 id="completedGames">0</h3>
+                    </article>
+                    <article class="stat-card glass">
+                        <span class="stat-icon">♡</span>
+                        <p>Favoritos</p>
+                        <h3 id="favoriteGames">0</h3>
+                    </article>
+                </div>
+            </section>
+
+            <section class="collection-section" id="coleccion">
+                <div class="section-heading">
+                    <div>
+                        <h2>Mi colección</h2>
+                        <p>Todos tus videojuegos en un solo lugar.</p>
+                    </div>
+                    <button class="btn btn-primary" id="addGameBtnSecondary">+ Agregar</button>
+                </div>
+
+                <div class="filters-panel glass">
+                    <div class="search-wrapper">
+                        <span>⌕</span>
+                        <input type="search" id="searchInput" class="input-control" placeholder="Buscar videojuego...">
+                    </div>
+                    <select id="filterPlatform" class="input-control">
+                        <option value="">Todas las plataformas</option>
+                        <option value="PC">PC</option>
+                        <option value="PlayStation 5">PlayStation 5</option>
+                        <option value="Xbox Series X|S">Xbox Series X|S</option>
+                    </select>
+                    <select id="filterStatus" class="input-control">
+                        <option value="">Todos los estados</option>
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Jugando">Jugando</option>
+                        <option value="Completado">Completado</option>
+                        <option value="Dropped">Dropped</option>
+                    </select>
+                </div>
+
+                <div class="games-grid" id="gamesGrid">
+                    <div class="empty-state glass">
+                        <div class="empty-icon">▣</div>
+                        <h3>Tu colección está esperando</h3>
+                        <p>Agrega tu primer videojuego para comenzar.</p>
+                        <button class="btn btn-primary" id="emptyAddGameBtn">Agregar videojuego</button>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="app-footer">
+                <p>RHLM GAMING © 2026 · REAL GAMERS NEVER DIE</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="gameModal" aria-hidden="true">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <div>
+                    <span class="hero-tag">TU BIBLIOTECA</span>
+                    <h2 id="modalTitle">Agregar videojuego</h2>
+                </div>
+                <button type="button" class="modal-close" id="closeModalBtn" aria-label="Cerrar">×</button>
+            </div>
+
+            <form id="gameForm">
+                <div class="input-group">
+                    <label for="gameTitle">Título del videojuego</label>
+                    <input type="text" id="gameTitle" class="input-control" placeholder="Ej. Grand Theft Auto VI" maxlength="100" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="gamePlatform">Plataforma</label>
+                        <select id="gamePlatform" class="input-control" required>
+                            <option value="">Seleccionar</option>
+                            <option value="PC">PC</option>
+                            <option value="PlayStation 5">PlayStation 5</option>
+                            <option value="Xbox Series X|S">Xbox Series X|S</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="gameYear">Año de lanzamiento</label>
+                        <input type="number" id="gameYear" class="input-control" min="1950" max="2100" placeholder="2026" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="gameDeveloper">Desarrollador</label>
+                    <input type="text" id="gameDeveloper" class="input-control" placeholder="Ej. Rockstar Games" maxlength="100" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="gameGenres">Géneros</label>
+                    <select id="gameGenres" class="input-control" multiple required>
+                        <option value="Accion">Acción</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="RPG">RPG</option>
+                        <option value="MMORPG">MMORPG</option>
+                        <option value="FPS">FPS</option>
+                        <option value="TPS">TPS</option>
+                        <option value="Estrategia">Estrategia</option>
+                        <option value="Simulacion">Simulación</option>
+                        <option value="Deportes">Deportes</option>
+                        <option value="Carreras">Carreras</option>
+                        <option value="Terror">Terror</option>
+                        <option value="Puzzle">Puzzle</option>
+                        <option value="Plataformas">Plataformas</option>
+                        <option value="Lucha">Lucha</option>
+                        <option value="Battle Royale">Battle Royale</option>
+                        <option value="Supervivencia">Supervivencia</option>
+                    </select>
+                    <small class="input-hint">Mantén presionada la tecla Ctrl para seleccionar varios géneros.</small>
+                </div>
+
+                <div class="input-group">
+                    <label for="gameStatus">Estado</label>
+                    <select id="gameStatus" class="input-control" required>
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Jugando">Jugando</option>
+                        <option value="Completado">Completado</option>
+                        <option value="Dropped">Dropped</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="gameCover">URL de portada (opcional)</label>
+                    <input type="url" id="gameCover" class="input-control" placeholder="https://ejemplo.com/portada.jpg">
+                </div>
+
+                <label class="favorite-option">
+                    <input type="checkbox" id="gameFavorite">
+                    <span>♡ Marcar como favorito</span>
+                </label>
+
+                <p class="form-error" id="gameFormError" role="alert"></p>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelModalBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="saveGameBtn">Guardar videojuego</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/game-search.js"></script>
+</body>
+</html>

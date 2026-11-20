@@ -1747,7 +1747,7 @@ body::before {
     background-repeat: no-repeat;
     background-position: center 15%;
     background-size: min(82vw, 1100px) auto;
-
+    
     opacity: 0.24;
     filter: blur(3px);
     mix-blend-mode: screen;
